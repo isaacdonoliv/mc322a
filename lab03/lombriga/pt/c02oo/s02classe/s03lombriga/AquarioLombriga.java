@@ -4,7 +4,7 @@ public class AquarioLombriga {
 	char aquario_lombriga[] = new char[15];
 	int AA, LL, PP;
 	
-	AquarioLombriga(int AA, int LL, int PP) {
+	AquarioLombriga(int AA, int LL, int PP) { // professor atualizou alguma coisa, baixe o lombriga.zip novo
 		this.AA = AA;
 		if (LL > AA)
 			this.LL = AA;
