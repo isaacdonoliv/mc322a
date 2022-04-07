@@ -6,6 +6,8 @@ public class AquarioLombriga {
 	int esq;
 	
 	AquarioLombriga(int AA, int LL, int PP) {
+		for (int i = 0; i < 15; i++)
+			aquarioLombriga[i] = '#';
 		esq = 1;
 		this.AA = AA;
 		if (LL > AA)
@@ -16,6 +18,14 @@ public class AquarioLombriga {
 			this.PP = 1;
 		else
 			this.PP = PP;
+		int aux = PP - 1;
+		if (esq == 1)
+			for (int j = aux; j < LL; j++)
+				aquarioLombriga[j] = '@';
+		else
+			for (int j = aux; j > aux - LL; j--)
+				aquarioLombriga[j] = '@';
+		aquarioLombriga[PP - 1] = 'o';
 		// ficara a seu criterio como tratar outras
 		// possibilidades de valores invalidos
 			

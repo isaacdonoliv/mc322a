@@ -9,9 +9,9 @@ public class Animacao {
 
     Animacao (String sequencia) {
         this.sequencia = sequencia;
-        AA = sequencia.charAt(0) + sequencia.charAt(1);
-        LL = sequencia.charAt(2) + sequencia.charAt(3);
-        PP = sequencia.charAt(4) + sequencia.charAt(5);
+        AA = Character.getNumericValue(sequencia.charAt(0)) + Character.getNumericValue(sequencia.charAt(1));
+        LL = Character.getNumericValue(sequencia.charAt(2)) + Character.getNumericValue(sequencia.charAt(3));
+        PP = Character.getNumericValue(sequencia.charAt(4)) + Character.getNumericValue(sequencia.charAt(5));
         indProxPasso = 6;
         n = sequencia.length() - 6;
         aquarioLombriga = new AquarioLombriga(AA, LL, PP);
