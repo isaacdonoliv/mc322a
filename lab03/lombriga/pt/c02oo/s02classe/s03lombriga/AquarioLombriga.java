@@ -23,7 +23,7 @@ public class AquarioLombriga {
 
 	void crescer() {
 		int aux = 0;
-		if (esq) {
+		if (esq == 1) {
 			aux = PP - 1 + LL;
 			if (aux < AA)
 				aquarioLombriga[aux] = '#';
@@ -39,7 +39,7 @@ public class AquarioLombriga {
 
 	void virar() {
 		aquarioLombriga[PP - 1] = '#';
-		if (esq)
+		if (esq == 1)
 			PP = PP + LL - 1;
 		else
 			PP = PP - LL + 1;
