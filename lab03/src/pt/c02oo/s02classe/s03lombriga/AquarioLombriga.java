@@ -6,7 +6,7 @@ public class AquarioLombriga {
 	int esq;
 	
 	AquarioLombriga(int AA, int LL, int PP) {
-		for (int i = 0; i < 15; i++)
+		for (int i = 0; i < AA; i++)
 			aquarioLombriga[i] = '#';
 		esq = 1;
 		this.AA = AA;
