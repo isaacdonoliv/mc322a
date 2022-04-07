@@ -26,16 +26,35 @@ public class AquarioLombriga {
 		if (esq == 1) {
 			aux = PP - 1 + LL;
 			if (aux < AA)
-				aquarioLombriga[aux] = '#';
+				aquarioLombriga[aux] = '@';
 		}
 		else {
 			aux = PP - 1 - LL;
 			if (aux < AA)
-				aquarioLombriga[PP - 1 - LL] = '#';
+				aquarioLombriga[aux] = '@';
 		}
 	} // aumenta no lado contrario a cabeca, se no room, do nothing
 
-	void mover() {}; // se esq, anda p esq, senao, o contrario
+	void mover() {
+		int aux = 0;
+		if (esq == 1) {
+			aux = PP - 2;
+			if (aux > -1) {
+				aquarioLombriga[aux + LL] = '#';
+				aquarioLombriga[aux + 1] = '@';
+				aquarioLombriga[aux] = 'o';
+			}
+		}
+		else {
+			aux = PP;
+			if (aux < AA) {
+				aquarioLombriga[aux - LL] = '#';
+				aquarioLombriga[aux - 1] = '@';
+				aquarioLombriga[aux] = 'o';
+			}
+		}
+	}
+	 // se esq, anda p esq, senao, o contrario, se nao tem mais espaco, virar lombriga
 
 	void virar() {
 		aquarioLombriga[PP - 1] = '#';
@@ -46,5 +65,7 @@ public class AquarioLombriga {
 		aquarioLombriga[PP - 1] = 'o';
 	} // troca a cabeca de lado
 
-	void apresenta() {}; // mostra lombriga no aquario
+	String apresenta() {
+		return String.valueOf(aquarioLombriga);
+	} // mostra lombriga no aquario
 }

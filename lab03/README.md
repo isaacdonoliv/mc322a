@@ -1,6 +1,5 @@
-# Lab03 - 
+# Lab03 - Lombriga no Aquario
 
-## Notebook 1 sobre 
-[Notebook1]()
+## Arquivos java da resolucao da tarefa
+[Arquivos](src/pt/c02oo/s02classe/s03lombriga)
 
-olhe como deve ser a arvore de arquivos para o envio
