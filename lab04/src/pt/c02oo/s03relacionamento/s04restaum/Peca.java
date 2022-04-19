@@ -4,7 +4,7 @@ public class Peca {
 	int estado;
 	// se estado = 0, nao ha posicao
 	// se = 1, tem peca,
-	// se = 2, peca comida
+	// se = 2, peca capturada
 	
 	Peca() {
 		estado = 1;

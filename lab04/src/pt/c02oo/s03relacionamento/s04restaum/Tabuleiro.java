@@ -45,7 +45,7 @@ public class Tabuleiro {
 		int colM = (col2 - col1) != 0 ? (col1 + col2)/2 : col1;
 		int linM = (lin2 - lin1) != 0 ? (lin1 + lin2)/2 : lin1;
 		
-		if (this.verificar(lin1, col1) == 1) {
+		if (this.verificar(lin1, col1) == 1)
 			if (this.verificar(linM, colM) == 1)
 				if (this.verificar(lin2, col2) == 2) {
 					tabuleiro[lin1][col1].sumir();
@@ -55,8 +55,6 @@ public class Tabuleiro {
 					tabuleiro[lin2][col2].aparecer();
 					board[lin2][col2] = 'P';
 				}
-					
-		}
 	}
 	
 }
