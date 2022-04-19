@@ -42,18 +42,18 @@ public class Tabuleiro {
 		int col2 =  colunas.indexOf(target.charAt(0));
 		int lin2 =  Character.getNumericValue(target.charAt(1)) - 1;
 		
-		int colM = (col2 - col1) != 0 ? Math.abs(col2 - col1) : col1;
-		int linM = (lin2 - lin1) != 0 ? Math.abs(lin2 - lin1) : lin1;
+		int colM = (col2 - col1) != 0 ? (col1 + col2)/2 : col1;
+		int linM = (lin2 - lin1) != 0 ? (lin1 + lin2)/2 : lin1;
 		
-		if (this.verificar(col1, lin1) == 1) {
-			if (this.verificar(colM, linM) == 1)
-				if (this.verificar(col2, lin2) == 2) {
-					tabuleiro[col1][lin1].sumir();
-					board[col1][lin1] = '-';
-					tabuleiro[colM][linM].sumir();
-					board[colM][linM] = '-';
-					tabuleiro[col2][lin2].aparecer();
-					board[col2][lin2] = 'P';
+		if (this.verificar(lin1, col1) == 1) {
+			if (this.verificar(linM, colM) == 1)
+				if (this.verificar(lin2, col2) == 2) {
+					tabuleiro[lin1][col1].sumir();
+					board[lin1][col1] = '-';
+					tabuleiro[linM][colM].sumir();
+					board[linM][colM] = '-';
+					tabuleiro[lin2][col2].aparecer();
+					board[lin2][col2] = 'P';
 				}
 					
 		}
