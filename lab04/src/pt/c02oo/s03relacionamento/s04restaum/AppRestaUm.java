@@ -9,11 +9,6 @@ public class AppRestaUm {
    public static void executaJogo(String arquivoEntrada, String arquivoSaida) {
       Toolkit tk = Toolkit.start(arquivoEntrada, arquivoSaida);
       
-      String commands[] = tk.retrieveCommands();
-      
-      for (int l = 0; l < commands.length; l++)
-         System.out.println(commands[l]);
-      
       char board[][] = {
          {' ', ' ', 'P', 'P', 'P', ' ', ' '},
          {' ', ' ', 'P', 'P', 'P', ' ', ' '},
@@ -23,8 +18,19 @@ public class AppRestaUm {
          {' ', ' ', 'P', 'P', 'P', ' ', ' '},
          {' ', ' ', 'P', 'P', 'P', ' ', ' '}
       };
-            
       tk.writeBoard("Tabuleiro inicial", board);
+      
+      Tabuleiro tab = new Tabuleiro(board);
+      String commands[] = tk.retrieveCommands();
+      String command[] = new String[2];
+      String title;
+      
+      for (int l = 0; l < commands.length; l++) {
+    	  command = commands[l].split(":");
+    	  tab.mover(command[0], command[1]);
+    	  title = String.format("source: %s; target: %s", command[0], command[1]);
+    	  tk.writeBoard(title, tab.board);
+      }
       
       tk.stop();
    }
